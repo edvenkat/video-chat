@@ -351,6 +351,14 @@
       function onDeviceReady() {
           console.log("onDeviceReady");
 
+          		  
+            var permissions = cordova.plugins.permissions;
+            permissions.requestPermission(permissions.RECORD_AUDIO, function(){}, function(){});
+
+            permissions.requestPermission(permissions.MODIFY_AUDIO_SETTINGS, function(){}, function(){});
+
+            permissions.requestPermission(permissions.CAMERA, function(){}, function(){});
+          
           // Just for iOS devices.
           // Read more here https://github.com/eface2face/cordova-plugin-iosrtc
           if (window.device.platform === 'iOS') {
